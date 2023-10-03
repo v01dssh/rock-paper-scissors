@@ -19,9 +19,9 @@ These steps are all what you need to create anything in programming.
 
 2. The plan is as follows: 
     a. Take player Input and save it to a variable called playerChoice [X]
-    b. Create a function that generate a random number, create a list of the computer choices, and then return a random choice.
-    c. Create a function that serves as your main app logic for determinating who is the winner (The Algorithm), return who is the winner.
-    d. Create a game loop where there is 5 turns to play, create a loop counter, a player wins counter , and a computer wins counter. then Console.log the winner when the loop ends. 
+    b. Create a function that generate a random number, create a list of the computer choices, and then return a random choice. [x]
+    c. Create a function that serves as your main app logic for determinating who is the winner (The Algorithm), return who is the winner. [x]
+    d. Create a game loop where there is 5 turns to play, create a loop counter, a player wins counter , and a computer wins counter. then Console.log the winner when the loop ends. [x]
     e. Create a design in Figma for the website, download assets, and implement the design in HTML and CSS, then Hook up the images to the player choice, update the player wins, computer wins dom elements with the actual variables, and then create a popup with you win or lose. 
     
 3. I think I divided my task as above more than enough. 
