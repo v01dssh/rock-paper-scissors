@@ -42,7 +42,13 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-playRound(playerChoice, computerChoice());
+
+let rounds = 5;
+while (rounds > 0) {
+    let playerChoice = prompt("Rock, Paper, or Scissors ?").toLowerCase();
+    playRound(playerChoice, computerChoice());
+    rounds -= 1;
+}
 
 console.log(playerWins);
 console.log(computerWins);
