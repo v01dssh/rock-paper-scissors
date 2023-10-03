@@ -1,6 +1,4 @@
-// Take Player Input
-let playerChoice = prompt("Rock, Paper, or Scissors ?").toLowerCase();
-
+// Score Counter
 let playerWins = 0;
 let computerWins = 0;
 
@@ -36,19 +34,36 @@ function playRound(playerChoice, computerChoice) {
         computerWins += 1;
     }
 
-    // Tie 
+    // Enter Wrong Value 
     else {
-        console.log("Tie");
+        throw new Error("You Entered a wrong value ");
     }
 }
 
 
 let rounds = 5;
 while (rounds > 0) {
-    let playerChoice = prompt("Rock, Paper, or Scissors ?").toLowerCase();
-    playRound(playerChoice, computerChoice());
-    rounds -= 1;
+    try {
+        let playerChoice = prompt("Rock, Paper, or Scissors ?").toLowerCase();
+        playRound(playerChoice, computerChoice());
+        rounds -= 1;
+    }
+    catch (err) {
+        console.log(err);
+        break;
+    }
+
 }
 
 console.log(playerWins);
 console.log(computerWins);
+
+if (playerWins > computerWins) {
+    console.log("Player Wins!");
+}
+else if (playerWins < computerWins) {
+    console.log("Computer Wins!");
+}
+else {
+    console.log("Tie!");
+}
