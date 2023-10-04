@@ -37,6 +37,10 @@ img {
 
 }
 
+.rounds {
+    text-align: center;
+}
+
 .score {
     display: flex;
     justify-content: space-around;

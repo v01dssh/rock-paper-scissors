@@ -1,7 +1,6 @@
 // Score Counter
 let playerWins = 0;
 let computerWins = 0;
-
 // Computer choice logic
 function computerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -9,6 +8,7 @@ function computerChoice() {
     return choices[randomNumber];
 }
 
+// Algorithm for determining the winner
 function playRound(playerChoice, computerChoice) {
     // Rock beats Scissors 
     if (playerChoice === "rock" && computerChoice === "scissors") {
@@ -33,37 +33,57 @@ function playRound(playerChoice, computerChoice) {
     else if (playerChoice === "paper" && computerChoice === "scissors") {
         computerWins += 1;
     }
-
-    // Enter Wrong Value 
     else {
-        throw new Error("You Entered a wrong value ");
+        alert("Tie");
     }
 }
 
-
+// Assign how many rounds you want to play
 let rounds = 5;
-while (rounds > 0) {
-    try {
-        let playerChoice = prompt("Rock, Paper, or Scissors ?").toLowerCase();
-        playRound(playerChoice, computerChoice());
-        rounds -= 1;
+document.getElementById("score-counter").innerHTML = rounds;
+
+// Logic for handling when the player clicks the rock image
+function rockPlay() {
+    playRound("rock", computerChoice());
+    updateNumbers();
+    determineWinner();
+}
+
+// Logic for handling when the player clicks the paper image
+function paperPlay() {
+    playRound("paper", computerChoice());
+    updateNumbers();
+    determineWinner();
+}
+
+// Logic for handling when the player clicks the scissors image
+function scissorsPlay() {
+    playRound("scissors", computerChoice());
+    updateNumbers();
+    determineWinner();
+}
+
+// Function for updating the Scores, and round numbers (cleaner and more readable)
+function updateNumbers() {
+    document.getElementById("player-counter").innerHTML = playerWins;
+    document.getElementById("computer-counter").innerHTML = computerWins;
+    rounds -= 1;
+    document.getElementById("score-counter").innerHTML = rounds;
+}
+
+// Logic for determining the Winner, or Tie conditions
+function determineWinner() {
+    if (rounds === 0 && playerWins > computerWins) {
+        location.replace("./win-condition/win.html");
     }
-    catch (err) {
-        console.log(err);
-        break;
+    else if (rounds === 0 && playerWins < computerWins) {
+        location.replace("./lose-condition/lose.html");
     }
-
+    else if (rounds === 0 && playerWins === computerWins) {
+        location.reload();
+    }
 }
 
-console.log(playerWins);
-console.log(computerWins);
-
-if (playerWins > computerWins) {
-    console.log("Player Wins!");
-}
-else if (playerWins < computerWins) {
-    console.log("Computer Wins!");
-}
-else {
-    console.log("Tie!");
-}
+document.getElementById("rock").onclick = rockPlay;
+document.getElementById("paper").onclick = paperPlay;
+document.getElementById("scissors").onclick = scissorsPlay;
