@@ -1,0 +1,15 @@
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+body {
+    background-color: #006699;
+    font-family: 'Gamja Flower', cursive;
+    font-size: 50px;
+
+}

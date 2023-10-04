@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: azure;
+    font-family: 'Gamja Flower', cursive;
 }
 
 header {
@@ -37,12 +38,13 @@ img {
 
 }
 
-.rounds {
-    text-align: center;
-}
-
 .score {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    font-size: 20px;
+}
+
+footer {
     text-align: center;
 }

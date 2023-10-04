@@ -80,6 +80,7 @@ function determineWinner() {
         location.replace("./lose-condition/lose.html");
     }
     else if (rounds === 0 && playerWins === computerWins) {
+        alert("It's a Tie!")
         location.reload();
     }
 }
