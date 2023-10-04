@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    color: azure;
+}
+
+header {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.weapons {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    .weapons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 350px;
+    }
+
+    .weapons img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+img {
+    background-color: white;
+    width: 300px;
+    margin: 10px;
+    border-radius: 10%;
+
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
